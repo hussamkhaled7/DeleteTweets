@@ -1,4 +1,5 @@
-var authorization = "Bearer ***"; // replace by authorization value
+var authorization = "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+"; // replace by authorization value
 var ua = navigator.userAgentData.brands.map(brand => `"${brand.brand}";v="${brand.version}"`).join(', ');
 var client_tid = "***"; // replace by X-Client-Transaction-Id value
 var client_uuid = "***"; // replace by X-Client-Uuid value
@@ -14,13 +15,15 @@ var twitter_archive_content = undefined
 var twitter_archive_loading_confirmed = false
 
 var delete_options = {
+	"after_date":new Date('2015-08-05'), // year-month-day
+	"before_date":new Date('2024-09-19') // year-month-day
 	/*  from_archive: If you downloaded your archive from Twitter, set this to true.
 	    You will be prompt to upload the tweets.js file from it.
 		Advantage is that this is much more reliable and faster.
 		You can combine this with options: unretweet, match_any_keywords, tweets_to_ignore, after/before date
 		others will be ignored
 	 */
-	"from_archive":false,
+	"from_archive":true,
 	/*  unretweet: seems obvious, but it unretweet if set to true */
 	"unretweet":false,
 	/* do_not_remove_pinned_tweet: THIS CAN FAIL. Twitter has too many different way to format their response that I cannot guarantee this to work 100%
